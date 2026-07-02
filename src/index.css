@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+
+  body {
+    @apply bg-grafite font-body text-gelo antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-dourado/30 text-gelo;
+  }
+}
+
+@layer components {
+  .section-slide {
+    @apply relative flex min-h-screen w-full snap-start snap-always items-center justify-center overflow-hidden;
+  }
+
+  .section-inner {
+    @apply relative mx-auto w-full max-w-[1600px] px-6 py-20 md:px-12 lg:px-16;
+  }
+
+  .aspect-cinema {
+    aspect-ratio: 16 / 9;
+  }
+
+  .heading-display {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  .label-tag {
+    @apply inline-block rounded-full border border-dourado/40 bg-dourado/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-dourado;
+  }
+
+  .card-premium {
+    @apply rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-500 hover:border-dourado/30 hover:bg-white/[0.08];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-dourado px-6 py-3 text-sm font-semibold uppercase tracking-wider text-grafite transition-all duration-300 hover:bg-dourado/90 hover:shadow-lg hover:shadow-dourado/20;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 rounded-full border border-gelo/30 px-6 py-3 text-sm font-medium uppercase tracking-wider text-gelo transition-all duration-300 hover:border-dourado hover:text-dourado;
+  }
+
+  .image-frame {
+    @apply overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40;
+  }
+
+  .gradient-overlay {
+    @apply pointer-events-none absolute inset-0 bg-gradient-to-t from-grafite via-grafite/40 to-transparent;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-gelo via-gelo to-dourado bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animate-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .opacity-0-start {
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e22;
+}
+::-webkit-scrollbar-thumb {
+  background: #184a5c;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bf914d;
+}
+
+/* ── CV Mode ── */
+html.cv-mode {
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+body.cv-mode {
+  overflow-x: auto;
+  background: #1e1e22;
+}
+
+.cv-page {
+  width: 210mm;
+  min-height: 297mm;
+}
+
+.page {
+  page-break-after: always;
+  break-after: page;
+}
+
+.page:last-child {
+  page-break-after: auto;
+  break-after: auto;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: white !important;
+    overflow: visible !important;
+    scroll-snap-type: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .cv-wrapper {
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  .cv-pages {
+    gap: 0 !important;
+  }
+
+  .page,
+  .cv-page {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    max-height: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .page:last-child,
+  .cv-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .cv-sidebar {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
