@@ -3,14 +3,16 @@ import { useEffect, useRef, useState } from 'react'
 const SECTIONS = [
   { id: 'capa', num: '01', label: 'Início' },
   { id: 'quem-sou', num: '02', label: 'Sobre' },
-  { id: 'projetos', num: '03', label: 'Projetos' },
-  { id: 'ipss', num: '04', label: 'IPSS Gestão' },
-  { id: 'storytelling', num: '05', label: 'Storytelling' },
-  { id: 'gastronomia', num: '06', label: 'FredFood' },
-  { id: 'web-ia', num: '07', label: 'Tecnologia' },
-  { id: 'agua-2047', num: '08', label: 'Água 2047' },
-  { id: 'competencias', num: '09', label: 'Competências' },
-  { id: 'manifesto', num: '10', label: 'MTM' },
+  { id: 'percurso', num: '03', label: 'Percurso' },
+  { id: 'projetos', num: '04', label: 'Projetos' },
+  { id: 'cultura', num: '05', label: 'Cultura' },
+  { id: 'ipss', num: '06', label: 'IPSS Gestão' },
+  { id: 'storytelling', num: '07', label: 'Storytelling' },
+  { id: 'gastronomia', num: '08', label: 'FredFood' },
+  { id: 'web-ia', num: '09', label: 'Tecnologia' },
+  { id: 'agua-2047', num: '10', label: 'Água 2047' },
+  { id: 'competencias', num: '11', label: 'Competências' },
+  { id: 'manifesto', num: '12', label: 'MTM' },
 ]
 
 const GITHUB_URL = 'https://github.com/Ger0nim0dx'
@@ -266,8 +268,8 @@ function SectionCapa({ visible }) {
         </Animated>
         <Animated visible={visible} delay={300}>
           <h1 className="heading-display mb-6 mt-5 max-w-6xl text-5xl font-extrabold uppercase leading-[0.95] tracking-[0.08em] text-gelo md:text-7xl lg:text-8xl">
-            Criador de<br />
-            <span className="text-gradient">Projetos Digitais</span>
+            Tecnologia.<br />
+            <span className="text-gradient">Narrativa. Cultura.</span>
           </h1>
         </Animated>
         <Animated visible={visible} delay={450}>
@@ -280,8 +282,8 @@ function SectionCapa({ visible }) {
         </Animated>
         <Animated visible={visible} delay={750}>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gelo/75 md:text-xl">
-            Transformo ideias em projetos que unem comunicação, criatividade e tecnologia.
-            O meu percurso integra produção cultural, storytelling, comunicação digital,
+            Da Ciência da Informação à Tecnologia Multimédia: um percurso multidisciplinar
+            construído entre bibliotecas, escrita, produção cultural, comunicação digital,
             desenvolvimento web e inteligência artificial.
           </p>
         </Animated>
@@ -315,22 +317,29 @@ function SectionQuemSou({ visible }) {
           </Animated>
           <Animated visible={visible} delay={100}>
             <h2 className="heading-display mb-8 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
-              Da informação<br />
-              <span className="text-dourado">à experiência digital</span>
+              Um percurso feito<br />
+              <span className="text-dourado">de projetos</span>
             </h2>
           </Animated>
           <Animated visible={visible} delay={200}>
             <p className="mb-6 text-lg leading-relaxed text-gelo/85">
-              O meu percurso começou na gestão da informação e na promoção da leitura,
-              passando pela escrita, produção cultural, formação profissional,
-              gastronomia, comunicação digital e desenvolvimento web.
+              O meu percurso começou muito antes da programação. Iniciei-me no associativismo estudantil
+              e na dinamização cultural, desenvolvendo projetos de promoção da leitura, organização de
+              eventos, escrita criativa e intervenção comunitária.
             </p>
           </Animated>
           <Animated visible={visible} delay={300}>
+            <p className="mb-6 text-base leading-relaxed text-gelo/75">
+              A formação em Ciências da Informação e da Documentação levou-me à gestão documental,
+              às bibliotecas e à mediação cultural. Mais tarde, a experiência na FredFood aproximou-me
+              da fotografia gastronómica, do branding e da produção de conteúdos digitais.
+            </p>
+          </Animated>
+          <Animated visible={visible} delay={400}>
             <p className="text-base leading-relaxed text-gelo/70">
-              Hoje procuro integrar estas experiências através da Tecnologia Multimédia:
-              programação, design de interação, inteligência artificial, narrativa e criação
-              de conteúdos digitais com impacto educativo, cultural e social.
+              Hoje aplico esta trajetória no desenvolvimento de aplicações web, interfaces digitais
+              e soluções apoiadas por inteligência artificial. É esta convergência entre cultura,
+              comunicação, design e tecnologia que pretendo aprofundar no Mestrado em Tecnologia Multimédia.
             </p>
           </Animated>
         </div>
@@ -339,25 +348,25 @@ function SectionQuemSou({ visible }) {
             title="Informação"
             items={['Ciências da Informação', 'Bibliotecas', 'Gestão Documental']}
             visible={visible}
-            delay={400}
+            delay={450}
           />
           <SkillCard
             title="Cultura"
-            items={['Storytelling', 'Promoção da Leitura', 'Autor Publicado']}
+            items={['Promoção da Leitura', 'Escrita Criativa', 'Autor Publicado']}
             visible={visible}
-            delay={500}
+            delay={550}
           />
           <SkillCard
             title="Comunicação"
             items={['Redes Sociais', 'Fotografia', 'Branding']}
             visible={visible}
-            delay={600}
+            delay={650}
           />
           <SkillCard
             title="Tecnologia"
             items={['React', 'IA aplicada', 'UX/UI']}
             visible={visible}
-            delay={700}
+            delay={750}
           />
         </div>
       </div>
@@ -422,12 +431,164 @@ function SectionProjetos({ visible }) {
   )
 }
 
+
+function TimelineItem({ year, title, text, visible, delay }) {
+  return (
+    <Animated visible={visible} delay={delay}>
+      <div className="group relative rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all hover:border-dourado/40 hover:bg-dourado/5">
+        <p className="mb-2 font-display text-xs font-semibold uppercase tracking-[0.25em] text-dourado">
+          {year}
+        </p>
+        <h3 className="mb-2 font-display text-lg font-bold text-gelo group-hover:text-dourado">
+          {title}
+        </h3>
+        <p className="text-sm leading-relaxed text-gelo/65">{text}</p>
+      </div>
+    </Animated>
+  )
+}
+
+function SectionPercurso({ visible }) {
+  const timeline = [
+    {
+      year: 'c. 2001–2002',
+      title: 'Associação de Estudantes',
+      text: 'Vice-presidente da Associação de Estudantes da Escola Secundária de Alijó, com experiência de representação, participação cívica e defesa dos direitos dos alunos.',
+    },
+    {
+      year: '2013–2015',
+      title: 'Biblioteca Manuel da Fonseca',
+      text: 'Trabalho em contexto de biblioteca, promoção da leitura, dinamização cultural e contacto direto com comunidades e públicos diversos.',
+    },
+    {
+      year: '2014–2015',
+      title: 'Escrita e produção cultural',
+      text: 'Participação em projetos editoriais, escrita criativa, leituras dramatizadas e iniciativas culturais ligadas à palavra, à cidadania e à igualdade.',
+    },
+    {
+      year: '2016–2017',
+      title: 'Curso Intensivo de Cozinha',
+      text: 'Formação na ACPP, articulando técnica, produção alimentar, planeamento, estética e experiência gastronómica.',
+    },
+    {
+      year: '2019–presente',
+      title: 'Formação profissional',
+      text: 'Conceção de conteúdos, recursos pedagógicos e formação de adultos em áreas digitais, alimentação, gestão e documentação.',
+    },
+    {
+      year: '2022–2026',
+      title: 'FredFood',
+      text: 'Gestão operacional, comunicação digital, redes sociais, fotografia gastronómica, branding e produção de conteúdos.',
+    },
+    {
+      year: '2026',
+      title: 'Web, IA e Multimédia',
+      text: 'Desenvolvimento de projetos em React, automação, inteligência artificial, UX/UI e candidatura ao Mestrado em Tecnologia Multimédia.',
+    },
+  ]
+
+  return (
+    <section id="percurso" className="section-slide bg-grafite">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_#184A5C55_0%,_transparent_55%)]" />
+      <div className="section-inner relative z-10 flex min-h-screen flex-col justify-center">
+        <Animated visible={visible} delay={0}>
+          <span className="label-tag mb-6">03 — Percurso</span>
+        </Animated>
+        <Animated visible={visible} delay={100}>
+          <h2 className="heading-display mb-4 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
+            Antes de ser digital,<br />
+            <span className="text-dourado">já era projeto</span>
+          </h2>
+        </Animated>
+        <Animated visible={visible} delay={200}>
+          <p className="mb-10 max-w-3xl text-lg leading-relaxed text-gelo/75">
+            O fio condutor do meu percurso é a capacidade de transformar ideias em iniciativas concretas:
+            da participação cívica à cultura, da escrita à formação, da gastronomia à tecnologia.
+          </p>
+        </Animated>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {timeline.map((item, index) => (
+            <TimelineItem key={item.title} {...item} visible={visible} delay={300 + index * 80} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function CultureCard({ title, subtitle, text, visible, delay }) {
+  return (
+    <Animated visible={visible} delay={delay}>
+      <article className="card-premium h-full">
+        <p className="mb-2 font-display text-[10px] font-semibold uppercase tracking-[0.3em] text-dourado/80">
+          {subtitle}
+        </p>
+        <h3 className="mb-4 font-display text-2xl font-bold text-gelo">{title}</h3>
+        <p className="text-sm leading-relaxed text-gelo/75">{text}</p>
+      </article>
+    </Animated>
+  )
+}
+
+function SectionCultura({ visible }) {
+  const items = [
+    {
+      title: 'Conto com a Poesia',
+      subtitle: 'Promoção da leitura',
+      text: 'Projeto de dinamização cultural e promoção da leitura associado à Biblioteca Municipal Manuel da Fonseca, com sessões, leituras, comunidade e participação pública.',
+    },
+    {
+      title: '27 Acrobacias',
+      subtitle: 'Autor publicado',
+      text: "Participação no livro '27 Acrobacias sobre (quase) a mesma coisa', no âmbito de um projeto sobre igualdade de género, com o conto 'Os 3 Reis Magros'.",
+    },
+    {
+      title: 'Só se é criança uma vez',
+      subtitle: 'Texto e leitura dramatizada',
+      text: 'Texto apresentado em leitura dramatizada, ligando escrita, performance, intervenção social e comunicação pública.',
+    },
+    {
+      title: 'Água 2047',
+      subtitle: 'Projeto autoral',
+      text: 'Universo narrativo distópico sobre água, poder, desigualdade e bens comuns, pensado como matéria-prima para uma experiência multimédia.',
+    },
+  ]
+
+  return (
+    <section id="cultura" className="section-slide bg-petroleo">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_#BF914D1A_0%,_transparent_55%)]" />
+      <div className="section-inner relative z-10 flex min-h-screen flex-col justify-center">
+        <Animated visible={visible} delay={0}>
+          <span className="label-tag mb-6">05 — Cultura, Escrita e Storytelling</span>
+        </Animated>
+        <Animated visible={visible} delay={100}>
+          <h2 className="heading-display mb-4 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
+            A palavra como<br />
+            <span className="text-dourado">primeira tecnologia</span>
+          </h2>
+        </Animated>
+        <Animated visible={visible} delay={200}>
+          <p className="mb-12 max-w-3xl text-lg leading-relaxed text-gelo/75">
+            Antes do código, houve escrita, leitura, mediação cultural e comunicação pública.
+            Esta dimensão criativa é hoje uma base essencial para pensar experiências multimédia.
+          </p>
+        </Animated>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {items.map((item, index) => (
+            <CultureCard key={item.title} {...item} visible={visible} delay={300 + index * 100} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function SectionIPSS({ visible }) {
   return (
     <section id="ipss" className="section-slide bg-grafite">
       <div className="section-inner relative z-10">
         <Animated visible={visible} delay={0}>
-          <span className="label-tag mb-6">03 — Projeto em Destaque</span>
+          <span className="label-tag mb-6">06 — Projeto em Destaque</span>
         </Animated>
         <Animated visible={visible} delay={100}>
           <h2 className="heading-display mb-4 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
@@ -584,7 +745,7 @@ function SectionStorytelling({ visible }) {
       <div className="section-inner relative z-10 grid min-h-screen items-center gap-12 lg:grid-cols-2">
         <div>
           <Animated visible={visible} delay={0}>
-            <span className="label-tag mb-6">06 — Storytelling Digital</span>
+            <span className="label-tag mb-6">07 — Storytelling Digital</span>
           </Animated>
 
           <Animated visible={visible} delay={100}>
@@ -661,7 +822,7 @@ function SectionGastronomia({ visible }) {
     <section id="gastronomia" className="section-slide bg-grafite">
       <div className="section-inner relative z-10 flex min-h-screen flex-col justify-center">
         <Animated visible={visible} delay={0}>
-          <span className="label-tag mb-6">06 — FredFood, Branding & Comunicação Digital</span>
+          <span className="label-tag mb-6">08 — FredFood, Branding & Comunicação Digital</span>
         </Animated>
         <Animated visible={visible} delay={100}>
           <h2 className="heading-display mb-4 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
@@ -1057,7 +1218,7 @@ function SectionManifesto({ visible }) {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_#184A5C40_0%,_transparent_60%)]" />
       <div className="section-inner relative z-10 flex min-h-screen flex-col items-center justify-center text-center">
         <Animated visible={visible} delay={0}>
-          <span className="label-tag mb-8">10 — Porque Tecnologia Multimédia?</span>
+          <span className="label-tag mb-8">12 — Porque Tecnologia Multimédia?</span>
         </Animated>
         <Animated visible={visible} delay={150}>
           <h2 className="heading-display mb-6 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
@@ -1067,14 +1228,15 @@ function SectionManifesto({ visible }) {
         </Animated>
         <Animated visible={visible} delay={300}>
           <p className="mx-auto mb-8 max-w-3xl text-lg leading-relaxed text-gelo/75">
-            O meu percurso começou na gestão da informação e evoluiu para a comunicação,
-            a escrita, a formação, a produção cultural, a comunicação digital e o desenvolvimento
-            de soluções web. Vejo a Tecnologia Multimédia como o ponto de encontro entre estas áreas.
+            Durante anos trabalhei em áreas aparentemente distintas: bibliotecas, escrita,
+            produção cultural, formação, gastronomia, comunicação digital e desenvolvimento web.
+            Hoje percebo que todas conduzem ao mesmo lugar: criar experiências capazes de comunicar,
+            ensinar e transformar.
           </p>
           <p className="mx-auto mb-12 max-w-3xl text-lg leading-relaxed text-gelo/75">
-            Pretendo aprofundar competências que integrem programação, design, inteligência
-            artificial, narrativa e interação, criando experiências digitais com impacto social,
-            educativo e cultural.
+            Vejo o Mestrado em Tecnologia Multimédia como a oportunidade de integrar
+            definitivamente cultura, comunicação, design, programação e inteligência artificial
+            num percurso profissional coerente e orientado para impacto social, educativo e cultural.
           </p>
         </Animated>
         <Animated visible={visible} delay={450}>
@@ -1487,8 +1649,14 @@ function Portfolio() {
         <SectionWrapper id="quem-sou">
           {(visible) => <SectionQuemSou visible={visible} />}
         </SectionWrapper>
+        <SectionWrapper id="percurso">
+          {(visible) => <SectionPercurso visible={visible} />}
+        </SectionWrapper>
         <SectionWrapper id="projetos">
           {(visible) => <SectionProjetos visible={visible} />}
+        </SectionWrapper>
+        <SectionWrapper id="cultura">
+          {(visible) => <SectionCultura visible={visible} />}
         </SectionWrapper>
         <SectionWrapper id="ipss">
           {(visible) => <SectionIPSS visible={visible} />}
