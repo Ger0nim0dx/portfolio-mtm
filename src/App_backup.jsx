@@ -1,71 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
 
 const SECTIONS = [
-  { id: 'capa', num: '01', label: 'Início' },
-  { id: 'quem-sou', num: '02', label: 'Sobre' },
-  { id: 'projetos', num: '03', label: 'Projetos' },
-  { id: 'ipss', num: '04', label: 'IPSS Gestão' },
-  { id: 'storytelling', num: '05', label: 'Storytelling' },
-  { id: 'gastronomia', num: '06', label: 'FredFood' },
-  { id: 'web-ia', num: '07', label: 'Tecnologia' },
-  { id: 'agua-2047', num: '08', label: 'Água 2047' },
-  { id: 'competencias', num: '09', label: 'Competências' },
-  { id: 'manifesto', num: '10', label: 'MTM' },
+  { id: 'capa', num: '01', label: 'Capa' },
+  { id: 'quem-sou', num: '02', label: 'Quem Sou' },
+  { id: 'ipss', num: '03', label: 'IPSS Gestão' },
+  { id: 'ux-ui', num: '04', label: 'UX/UI' },
+  { id: 'web-ia', num: '05', label: 'Web & IA' },
+  { id: 'storytelling', num: '06', label: 'Storytelling' },
+  { id: 'gastronomia', num: '07', label: 'Gastronomia' },
+  { id: 'experiencia', num: '08', label: 'Experiência' },
+  { id: 'acessibilidade', num: '09', label: 'Acessibilidade' },
+  { id: 'agua-2047', num: '10', label: 'Água 2047' },
+  { id: 'manifesto', num: '11', label: 'Manifesto' },
 ]
 
 const GITHUB_URL = 'https://github.com/Ger0nim0dx'
 const IPSS_URL = 'https://ipss-refeicoes.vercel.app/'
-
-const FEATURED_PROJECTS = [
-  {
-    id: 'ipss',
-    title: 'IPSS Gestão',
-    category: 'Desenvolvimento Web',
-    description:
-      'Aplicação web para gestão de refeições em IPSS, desenvolvida em React, com foco na usabilidade, automatização e impacto social.',
-    skills: ['React', 'UX/UI', 'IA', 'JavaScript'],
-  },
-  {
-    id: 'fredfood',
-    title: 'FredFood',
-    category: 'Comunicação Digital',
-    description:
-      'Gestão da presença digital da marca através de fotografia gastronómica, branding, redes sociais e produção de conteúdos.',
-    skills: ['Marketing Digital', 'Branding', 'Fotografia', 'Social Media'],
-  },
-  {
-    id: 'agua2047',
-    title: 'Água 2047',
-    category: 'Storytelling',
-    description:
-      'Projeto de escrita criativa e narrativa distópica sobre sustentabilidade, justiça social e bens públicos.',
-    skills: ['Storytelling', 'Escrita', 'Criatividade'],
-  },
-  {
-    id: 'poesia',
-    title: 'Conto com a Poesia',
-    category: 'Produção Cultural',
-    description:
-      'Projeto de promoção da leitura e dinamização cultural desenvolvido na Biblioteca Municipal Manuel da Fonseca.',
-    skills: ['Eventos', 'Literatura', 'Comunicação'],
-  },
-  {
-    id: 'livro',
-    title: 'Autor Publicado',
-    category: 'Projeto Editorial',
-    description:
-      "Autor de texto publicado no projeto editorial '27 Acrobacias sobre (quase) a mesma coisa', dedicado à igualdade de género.",
-    skills: ['Literatura', 'Edição', 'Intervenção Social'],
-  },
-  {
-    id: 'formacao',
-    title: 'Formação Profissional',
-    category: 'Educação',
-    description:
-      'Conceção e desenvolvimento de recursos pedagógicos, formação de adultos e materiais digitais de apoio à aprendizagem.',
-    skills: ['E-learning', 'Formação', 'Comunicação'],
-  },
-]
 
 function useInView(threshold = 0.25) {
   const ref = useRef(null)
@@ -260,43 +210,40 @@ function SectionCapa({ visible }) {
           <span className="label-tag mb-8">Candidatura Mestrado — Tecnologia Multimédia</span>
         </Animated>
         <Animated visible={visible} delay={150}>
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.45em] text-dourado/80">
-            Frederico Sampaio Pinto
-          </p>
-        </Animated>
-        <Animated visible={visible} delay={300}>
-          <h1 className="heading-display mb-6 mt-5 max-w-6xl text-5xl font-extrabold uppercase leading-[0.95] tracking-[0.08em] text-gelo md:text-7xl lg:text-8xl">
-            Criador de<br />
-            <span className="text-gradient">Projetos Digitais</span>
+          <h1 className="heading-display mb-6 text-6xl font-extrabold uppercase tracking-[0.15em] text-gelo md:text-8xl lg:text-9xl">
+            Portfólio
           </h1>
         </Animated>
-        <Animated visible={visible} delay={450}>
+        <Animated visible={visible} delay={300}>
           <div className="mx-auto mb-8 h-px w-24 bg-dourado" />
         </Animated>
+        <Animated visible={visible} delay={450}>
+          <p className="heading-display mb-4 max-w-4xl text-xl font-medium text-gelo md:text-2xl lg:text-3xl">
+            Frederico Marinheira Dias Sampaio Pinto
+          </p>
+        </Animated>
         <Animated visible={visible} delay={600}>
-          <p className="mb-5 text-lg font-medium uppercase tracking-[0.25em] text-gelo/70 md:text-xl">
-            Comunicação • Cultura • Tecnologia
+          <p className="text-gradient text-lg font-light tracking-wide md:text-xl">
+            Da Informação à Experiência Digital
           </p>
         </Animated>
         <Animated visible={visible} delay={750}>
-          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gelo/75 md:text-xl">
-            Transformo ideias em projetos que unem comunicação, criatividade e tecnologia.
-            O meu percurso integra produção cultural, storytelling, comunicação digital,
-            desenvolvimento web e inteligência artificial.
-          </p>
-        </Animated>
-        <Animated visible={visible} delay={900}>
           <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-            <a href="#projetos" className="btn-primary">
-              Explorar Projetos
-            </a>
-            <a href="/cv" className="btn-outline">
-              Ver CV
+            <a href={IPSS_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <ExternalIcon />
+              Ver IPSS Gestão
             </a>
             <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="btn-outline">
               <GitHubIcon />
               GitHub
             </a>
+          </div>
+        </Animated>
+        <Animated visible={visible} delay={900}>
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg className="h-6 w-6 text-dourado/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
         </Animated>
       </div>
@@ -311,111 +258,52 @@ function SectionQuemSou({ visible }) {
       <div className="section-inner relative z-10 grid min-h-screen items-center gap-12 lg:grid-cols-2">
         <div>
           <Animated visible={visible} delay={0}>
-            <span className="label-tag mb-6">02 — Sobre</span>
+            <span className="label-tag mb-6">02 — Quem Sou</span>
           </Animated>
           <Animated visible={visible} delay={100}>
             <h2 className="heading-display mb-8 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
-              Da informação<br />
-              <span className="text-dourado">à experiência digital</span>
+              Um percurso<br />
+              <span className="text-dourado">multidisciplinar</span>
             </h2>
           </Animated>
           <Animated visible={visible} delay={200}>
             <p className="mb-6 text-lg leading-relaxed text-gelo/85">
-              O meu percurso começou na gestão da informação e na promoção da leitura,
-              passando pela escrita, produção cultural, formação profissional,
-              gastronomia, comunicação digital e desenvolvimento web.
+              Profissional com formação em gestão da informação e experiência em formação de adultos,
+              gastronomia, storytelling digital, desenvolvimento web e inteligência artificial.
             </p>
           </Animated>
           <Animated visible={visible} delay={300}>
             <p className="text-base leading-relaxed text-gelo/70">
-              Hoje procuro integrar estas experiências através da Tecnologia Multimédia:
-              programação, design de interação, inteligência artificial, narrativa e criação
-              de conteúdos digitais com impacto educativo, cultural e social.
+              Combino rigor analítico com sensibilidade criativa — da organização de dados à
+              construção de experiências digitais que comunicam, informam e transformam.
             </p>
           </Animated>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <SkillCard
-            title="Informação"
-            items={['Ciências da Informação', 'Bibliotecas', 'Gestão Documental']}
+            title="Formação"
+            items={['Gestão da Informação', 'Formação de Adultos', 'Multimédia']}
             visible={visible}
             delay={400}
           />
           <SkillCard
-            title="Cultura"
-            items={['Storytelling', 'Promoção da Leitura', 'Autor Publicado']}
+            title="Criativo"
+            items={['Storytelling', 'Branding', 'Comunicação Visual']}
             visible={visible}
             delay={500}
           />
           <SkillCard
-            title="Comunicação"
-            items={['Redes Sociais', 'Fotografia', 'Branding']}
+            title="Técnico"
+            items={['React & Web Dev', 'IA aplicada', 'UX/UI Design']}
             visible={visible}
             delay={600}
           />
           <SkillCard
-            title="Tecnologia"
-            items={['React', 'IA aplicada', 'UX/UI']}
+            title="Experiência"
+            items={['Gastronomia', 'Gestão de equipas', 'Projetos digitais']}
             visible={visible}
             delay={700}
           />
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function ProjectCard({ project, visible, delay }) {
-  return (
-    <Animated visible={visible} delay={delay}>
-      <article className="card-premium group flex h-full flex-col">
-        <p className="mb-3 font-display text-[10px] font-semibold uppercase tracking-[0.3em] text-dourado/80">
-          {project.category}
-        </p>
-        <h3 className="mb-4 font-display text-2xl font-bold text-gelo transition-colors group-hover:text-dourado">
-          {project.title}
-        </h3>
-        <p className="mb-6 flex-1 text-sm leading-relaxed text-gelo/75">
-          {project.description}
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {project.skills.map((skill) => (
-            <span
-              key={skill}
-              className="rounded-full border border-dourado/20 bg-dourado/10 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-dourado"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </article>
-    </Animated>
-  )
-}
-
-function SectionProjetos({ visible }) {
-  return (
-    <section id="projetos" className="section-slide bg-grafite">
-      <div className="section-inner relative z-10 flex min-h-screen flex-col justify-center">
-        <Animated visible={visible} delay={0}>
-          <span className="label-tag mb-6">03 — Projetos em Destaque</span>
-        </Animated>
-        <Animated visible={visible} delay={100}>
-          <h2 className="heading-display mb-4 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
-            Projetos que ligam<br />
-            <span className="text-dourado">cultura, comunicação e tecnologia</span>
-          </h2>
-        </Animated>
-        <Animated visible={visible} delay={200}>
-          <p className="mb-12 max-w-3xl text-lg leading-relaxed text-gelo/75">
-            Mais do que uma lista de competências, este portfólio apresenta projetos que mostram
-            a evolução de um percurso multidisciplinar orientado para a criação de experiências multimédia.
-          </p>
-        </Animated>
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {FEATURED_PROJECTS.map((project, index) => (
-            <ProjectCard key={project.id} project={project} visible={visible} delay={300 + index * 80} />
-          ))}
         </div>
       </div>
     </section>
@@ -535,7 +423,7 @@ function SectionWebIA({ visible }) {
         <div className="grid min-h-screen items-center gap-12 lg:grid-cols-2">
           <div>
             <Animated visible={visible} delay={0}>
-              <span className="label-tag mb-6">07 — Desenvolvimento Web & IA</span>
+              <span className="label-tag mb-6">05 — Desenvolvimento Web & IA</span>
             </Animated>
             <Animated visible={visible} delay={100}>
               <h2 className="heading-display mb-8 text-4xl font-bold text-gelo md:text-5xl">
@@ -661,16 +549,17 @@ function SectionGastronomia({ visible }) {
     <section id="gastronomia" className="section-slide bg-grafite">
       <div className="section-inner relative z-10 flex min-h-screen flex-col justify-center">
         <Animated visible={visible} delay={0}>
-          <span className="label-tag mb-6">06 — FredFood, Branding & Comunicação Digital</span>
+          <span className="label-tag mb-6">07 — Gastronomia, Branding & Comunicação Visual</span>
         </Animated>
         <Animated visible={visible} delay={100}>
           <h2 className="heading-display mb-4 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
-            FredFood com <span className="text-dourado">identidade</span>
+            Sabores com <span className="text-dourado">identidade</span>
           </h2>
         </Animated>
         <Animated visible={visible} delay={200}>
           <p className="mb-12 max-w-3xl text-lg text-gelo/75">
-            Experiência de gestão operacional e comunicação digital: criação de conteúdos para redes sociais, fotografia gastronómica, branding e promoção de produtos.
+            A cozinha como laboratório criativo — onde técnica, estética e branding se encontram
+            para criar experiências gastronómicas com personalidade própria.
           </p>
         </Animated>
         <div className="grid gap-6 md:grid-cols-3">
@@ -738,56 +627,37 @@ function SectionExperiencia({ visible }) {
   )
 }
 
-function SectionCompetencias({ visible }) {
-  const blocks = [
-    {
-      title: 'Desenvolvimento',
-      items: ['React', 'JavaScript', 'Python', 'SQL', 'Git', 'Vite', 'Tailwind'],
-    },
-    {
-      title: 'Comunicação',
-      items: ['Storytelling', 'Fotografia', 'Redes Sociais', 'Branding', 'Produção de Conteúdos'],
-    },
-    {
-      title: 'Cultura',
-      items: ['Produção Cultural', 'Promoção da Leitura', 'Organização de Eventos', 'Escrita Criativa'],
-    },
-    {
-      title: 'Formação',
-      items: ['Conceção Pedagógica', 'E-learning', 'Recursos Digitais', 'Apresentações'],
-    },
-  ]
-
+function SectionAcessibilidade({ visible }) {
   return (
-    <section id="competencias" className="section-slide bg-petroleo">
+    <section id="acessibilidade" className="section-slide bg-petroleo">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#BF914D15_0%,_transparent_60%)]" />
-      <div className="section-inner relative z-10 flex min-h-screen flex-col justify-center">
+      <div className="section-inner relative z-10 flex min-h-screen flex-col items-center justify-center text-center">
         <Animated visible={visible} delay={0}>
-          <span className="label-tag mb-6">09 — Competências</span>
+          <span className="label-tag mb-8">09 — Tecnologia, Acessibilidade e Justiça Social</span>
         </Animated>
         <Animated visible={visible} delay={150}>
-          <h2 className="heading-display mb-6 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
-            Competências para<br />
-            <span className="text-dourado">Tecnologia Multimédia</span>
-          </h2>
+          <blockquote className="heading-display mx-auto max-w-4xl text-3xl font-medium leading-snug text-gelo md:text-4xl lg:text-5xl">
+            &ldquo;A acessibilidade nasce de um sentimento de{' '}
+            <span className="text-dourado">justiça</span>, onde o respeito é imperativo.&rdquo;
+          </blockquote>
         </Animated>
-        <Animated visible={visible} delay={300}>
-          <p className="mb-12 max-w-3xl text-lg leading-relaxed text-gelo/75">
-            Um perfil construído na interseção entre desenvolvimento web, comunicação digital,
-            criação cultural, formação e produção de conteúdos.
+        <Animated visible={visible} delay={350}>
+          <p className="mx-auto mt-12 max-w-2xl text-lg leading-relaxed text-gelo/75">
+            Tecnologia inclusiva não é um extra — é um compromisso ético. Projetos como o IPSS Gestão
+            nascem da convicção de que ferramentas digitais devem servir todas as pessoas,
+            especialmente as mais vulneráveis.
           </p>
         </Animated>
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {blocks.map((block, index) => (
-            <SkillCard
-              key={block.title}
-              title={block.title}
-              items={block.items}
-              visible={visible}
-              delay={400 + index * 100}
-            />
-          ))}
-        </div>
+        <Animated visible={visible} delay={500}>
+          <div className="mt-12 grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
+            {['WCAG & Inclusão', 'Impacto Social', 'Design Universal'].map((item, i) => (
+              <div key={item} className="card-premium text-center">
+                <span className="font-display text-2xl font-bold text-dourado">0{i + 1}</span>
+                <p className="mt-2 text-sm font-medium text-gelo/85">{item}</p>
+              </div>
+            ))}
+          </div>
+        </Animated>
       </div>
     </section>
   )
@@ -1057,32 +927,24 @@ function SectionManifesto({ visible }) {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_#184A5C40_0%,_transparent_60%)]" />
       <div className="section-inner relative z-10 flex min-h-screen flex-col items-center justify-center text-center">
         <Animated visible={visible} delay={0}>
-          <span className="label-tag mb-8">10 — Porque Tecnologia Multimédia?</span>
+          <span className="label-tag mb-8">10 — Manifesto Final</span>
         </Animated>
         <Animated visible={visible} delay={150}>
           <h2 className="heading-display mb-6 text-4xl font-bold text-gelo md:text-5xl lg:text-6xl">
-            O ponto de encontro entre<br />
-            <span className="text-gradient">ideias, meios e pessoas</span>
+            Da informação à<br />
+            <span className="text-gradient">experiência digital</span>
           </h2>
         </Animated>
         <Animated visible={visible} delay={300}>
-          <p className="mx-auto mb-8 max-w-3xl text-lg leading-relaxed text-gelo/75">
-            O meu percurso começou na gestão da informação e evoluiu para a comunicação,
-            a escrita, a formação, a produção cultural, a comunicação digital e o desenvolvimento
-            de soluções web. Vejo a Tecnologia Multimédia como o ponto de encontro entre estas áreas.
-          </p>
-          <p className="mx-auto mb-12 max-w-3xl text-lg leading-relaxed text-gelo/75">
-            Pretendo aprofundar competências que integrem programação, design, inteligência
-            artificial, narrativa e interação, criando experiências digitais com impacto social,
-            educativo e cultural.
+          <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-gelo/70">
+            Acredito numa multimédia que une rigor técnico, sensibilidade humana e impacto social.
+            Este portfólio é o reflexo de um percurso que continua — e que pretendo aprofundar
+            no Mestrado em Tecnologia Multimédia.
           </p>
         </Animated>
         <Animated visible={visible} delay={450}>
           <div className="mb-12 flex flex-wrap items-center justify-center gap-4">
-            <a href="/cv" className="btn-primary">
-              Ver Curriculum Vitae
-            </a>
-            <a href={IPSS_URL} target="_blank" rel="noopener noreferrer" className="btn-outline">
+            <a href={IPSS_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
               <ExternalIcon />
               IPSS Gestão
             </a>
@@ -1110,6 +972,11 @@ function SectionManifesto({ visible }) {
               +351 937 331 329
             </a>
           </div>
+        </Animated>
+        <Animated visible={visible} delay={750}>
+          <p className="mt-16 text-xs uppercase tracking-[0.4em] text-gelo/30">
+            Frederico Marinheira Dias Sampaio Pinto — 2026
+          </p>
         </Animated>
       </div>
     </section>
@@ -1487,11 +1354,14 @@ function Portfolio() {
         <SectionWrapper id="quem-sou">
           {(visible) => <SectionQuemSou visible={visible} />}
         </SectionWrapper>
-        <SectionWrapper id="projetos">
-          {(visible) => <SectionProjetos visible={visible} />}
-        </SectionWrapper>
         <SectionWrapper id="ipss">
           {(visible) => <SectionIPSS visible={visible} />}
+        </SectionWrapper>
+        <SectionWrapper id="ux-ui">
+          {(visible) => <SectionUXUI visible={visible} />}
+        </SectionWrapper>
+        <SectionWrapper id="web-ia">
+          {(visible) => <SectionWebIA visible={visible} />}
         </SectionWrapper>
         <SectionWrapper id="storytelling">
           {(visible) => <SectionStorytelling visible={visible} />}
@@ -1499,14 +1369,14 @@ function Portfolio() {
         <SectionWrapper id="gastronomia">
           {(visible) => <SectionGastronomia visible={visible} />}
         </SectionWrapper>
-        <SectionWrapper id="web-ia">
-          {(visible) => <SectionWebIA visible={visible} />}
+        <SectionWrapper id="experiencia">
+          {(visible) => <SectionExperiencia visible={visible} />}
+        </SectionWrapper>
+        <SectionWrapper id="acessibilidade">
+          {(visible) => <SectionAcessibilidade visible={visible} />}
         </SectionWrapper>
         <SectionWrapper id="agua-2047">
           {(visible) => <SectionAgua2047 visible={visible} />}
-        </SectionWrapper>
-        <SectionWrapper id="competencias">
-          {(visible) => <SectionCompetencias visible={visible} />}
         </SectionWrapper>
         <SectionWrapper id="manifesto">
           {(visible) => <SectionManifesto visible={visible} />}
